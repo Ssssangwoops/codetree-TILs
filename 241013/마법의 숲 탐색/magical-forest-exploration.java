@@ -72,6 +72,7 @@ public class Main {
         centerRow = -1;
         centerCol = golemStart;
         while(move());
+
         if (centerRow < 2) {
             resetMap();
             return;
@@ -97,6 +98,7 @@ public class Main {
         golemMap[centerRow][centerCol + 1] = i;
         golemMap[centerRow - 1][centerCol] = i;
         golemMap[centerRow + 1][centerCol] = i;
+        // System.out.println(i + "=> i " + "golemExit : "  + golemExit);
 
         isExit[centerRow + dr[golemExit]][centerCol + dc[golemExit]] = true;
     }
@@ -134,7 +136,11 @@ public class Main {
             golemExit = (golemExit + 1) % 4;
             return;
         }
-        golemExit = (golemExit - 1) % 4;
+        if(golemExit == 0) {
+            golemExit = 3;
+            return;
+        }
+        golemExit = golemExit - 1;
     }
 
     public static boolean canEast() {
@@ -164,6 +170,7 @@ public class Main {
         }
         return false;
     }
+
     public static boolean canWest() {
         int a, b, c;
         a = centerRow - 1;
