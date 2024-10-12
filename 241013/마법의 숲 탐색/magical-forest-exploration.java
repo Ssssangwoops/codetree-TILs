@@ -159,6 +159,7 @@ public class Main {
                 }
                 return false;
             }
+            return false;
         }
         if (golemMap[a][centerCol + 1] == 0 &&
         golemMap[b][centerCol + 2] == 0 &&
@@ -187,6 +188,7 @@ public class Main {
                 }
                 return false;
             }
+            return false;
         }
         if (golemMap[a][centerCol - 1] == 0 &&
         golemMap[b][centerCol - 2] == 0 &&
