@@ -76,8 +76,8 @@ public class Main {
         while(move()) {
             if (fin) {
                 break;
-                }
             }
+        }
         if (centerRow < 2) {
             resetMap();
             return;
@@ -108,6 +108,10 @@ public class Main {
     }
 
     public static boolean move() {
+        if (centerRow == R - 1) {
+                fin = true;
+                return true;
+        }
         // 중앙 row, col 값을 얻었다.
         // 중앙 값을 기준으로 아래로 갈 수 있는지 확인
         // 아래로 갈 수 있다면 이동하고 true 리턴
@@ -115,9 +119,7 @@ public class Main {
         // 아래, 서, 동 모두 갈 수 없다면 false 리턴.
         if (canSouth(centerRow, centerCol)) {
             centerRow++;
-            if (centerRow == R - 1) {
-                fin = true;
-            }
+            
             return true;
         }
         if (canWest()) {
