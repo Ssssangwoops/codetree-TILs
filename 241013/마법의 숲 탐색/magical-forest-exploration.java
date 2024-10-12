@@ -153,7 +153,7 @@ public class Main {
             return false;
         }
         if (b <= 0) {
-            if (golemMap[c][centerCol - 1] == 0) {
+            if (golemMap[c][centerCol + 1] == 0) {
                 if(canSouth(centerRow, centerCol + 1)) {
                     return true;
                 }
